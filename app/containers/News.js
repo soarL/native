@@ -51,7 +51,7 @@ export default class News extends Component{
   render() {
     return (
      <WebView
-        source={{ uri: "https://wap.91hc.com/borrow" }}
+        source={{ uri: "https://www.baidu.com" }}
         style={{ width: '100%', height: '100%' }}
         domStorageEnabled={true}
         thirdPartyCookiesEnabled={true}

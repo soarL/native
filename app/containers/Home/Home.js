@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import { connect } from 'react-redux';
 import { Icon } from '../../components';
-import { RouteTo } from '../../utils';
+import { RouteTo ,isIphoneX} from '../../utils';
 import { 
   View, 
   Text,
@@ -11,6 +11,7 @@ import {
   Platform,
 } from 'react-native';
 import { WebView } from "react-native-webview";
+
 
 @connect(({home})=>({home}))
 export default class Home extends Component{
@@ -39,7 +40,7 @@ export default class Home extends Component{
   render() {
     const { home,dispatch} = this.props;
     return (
-      <View style={[{flex:1}]}>
+      <View style={[{flex:1,marginTop:isIphoneX() ? 44 : 0}]}>
         <Text>1</Text>
         <Button title='新闻页面' onPress={e=>dispatch(RouteTo({ routeName: 'News',params:{as:'213'}}))}/>
       </View>

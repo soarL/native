@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { BackHandler ,View,Platform,Dimensions} from 'react-native'
+import { BackHandler ,View } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import { AppNavigator } from './common/routes'
 import {
@@ -52,32 +52,10 @@ class Router extends PureComponent {
 
   render() {
     const { global,dispatch, router } = this.props;
-    if(Platform.OS === 'ios'){
-      return (
-        <View style={{marginTop:isIphoneX() ? 44 : 44,flex:1}}>
-          <App dispatch={dispatch} state={router} />
-        </View>
-      )
-    }else if(Platform.OS === 'android'){
       return (
         <App dispatch={dispatch} state={router} />
       )
-    }
   }
 }
-
-
-const screenW = Dimensions.get('window').width;
-const screenH = Dimensions.get('window').height;
-
-const X_WIDTH = 375;
-const X_HEIGHT = 812;
-
-function isIphoneX() {
-    return (
-        Platform.OS === 'ios' &&((screenH === X_HEIGHT && screenW === X_WIDTH) || (screenH === X_WIDTH && screenW === X_HEIGHT))
-    )
-}
-
 
 export default Router
