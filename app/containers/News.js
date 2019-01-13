@@ -12,24 +12,16 @@ export default class News extends Component{
     backButtonEnabled:false
   }
   static navigationOptions = {
-    title: '新闻',
+    title: 'test',
   }
   componentWillMount(){
   }
-
-  //componentDidMount() {
-    // let { dispatch } = this.props;
-    // dispatch({
-    //   type:'home/test'
-    // })
-  //}
 
   onNavigationStateChange = navState => {
     this.setState({
       backButtonEnabled: navState.canGoBack
     });
   };
-  // 监听原生返回键事件
   componentDidMount() {
     if (Platform.OS === 'android'){
       BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
@@ -40,11 +32,6 @@ export default class News extends Component{
       this.refs['webView'].goBack();
       return true;
     } else {
-      //if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
-      //  return false;
-      //}
-      //this.lastBackPressed = Date.now();
-      //ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
       return false;
     }
   };

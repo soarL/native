@@ -32,9 +32,16 @@ export default class Home extends Component{
   }
 
   componentWillMount() {
+    const { dispatch } = this.props;
     if(Platform.OS==='android'){
       SplashScreen.hide();
     }
+    dispatch({
+      type:'global/testAPI',
+      payload:{
+        name:'12'
+      }
+    })
   }
 
   render() {

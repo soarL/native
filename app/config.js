@@ -1,6 +1,6 @@
 const requestConfig = {
-	key:'yinyinyin2258',
-	url:'http://www.car.com'
+	key:'yinyinyin',
+	url:'http://www.test.com'
 }
 export {
 	requestConfig
