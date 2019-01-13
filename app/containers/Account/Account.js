@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Icon } from '../../components';
 import { View,Platform ,Text} from 'react-native';
+import { isIphoneX } from '../../utils';
 import SplashScreen from 'react-native-splash-screen';
 
 @connect(({global})=>({global}))
@@ -26,7 +27,7 @@ class Account extends Component {
   render() {
     const { global } = this.props;
     return (
-      <View style={[{flex:1}]}>
+      <View style={[{flex:1,marginTop:isIphoneX() ? 44 : 0}]}>
         <Text>user</Text>
       </View>
     )

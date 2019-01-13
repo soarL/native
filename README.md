@@ -1,4 +1,6 @@
 ./gradlew assembleRelease
+./gradlew clean 清除android缓存
+ios 直接删除 ios/build
 
 lin2598056
 
@@ -12,3 +14,4 @@ echo -e \n >> /system/etc/hosts
 echo 192.168.0.246 www.xxx.com >> /system/etc/hosts
 
 node_modules/react-native-splash-screen/android/src/main/res/values/styles.xml 在第二个样式里添加 <item name="android:windowFullscreen">true</item>
+

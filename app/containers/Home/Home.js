@@ -42,7 +42,7 @@ export default class Home extends Component{
     return (
       <View style={[{flex:1,marginTop:isIphoneX() ? 44 : 0}]}>
         <Text>1</Text>
-        <Button title='新闻页面' onPress={e=>dispatch(RouteTo({ routeName: 'News',params:{as:'213'}}))}/>
+        <Button title='下一页' onPress={e=>dispatch(RouteTo({ routeName: 'News',params:{as:'213'}}))}/>
       </View>
     );
   }
